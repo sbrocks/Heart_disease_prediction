@@ -29,7 +29,9 @@ app.post('/heart',function(req,res){
 	py.stdout.on('data',function(data){
 		dataString+=data.toString();
 	});
-
+	py.stderr.on('data',function(data){
+		console.log('error:'+data);
+	});
 	py.stdout.on('end',function(){
 		console.log('Sum of numbers=',dataString);
 	});
