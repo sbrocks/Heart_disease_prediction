@@ -1,21 +1,104 @@
 <% include ./partials/header %>
-	<h1>Heart Disease</h1>
-	<form action="/heart" method="POST">
-		<input type="text" name="1">
-		<input type="text" name="2">
-		<input type="text" name="3">
-		<input type="text" name="4">
-		<input type="text" name="5">
-		<input type="text" name="6">
-		<input type="text" name="7">
-		<input type="text" name="8">
-		<input type="text" name="9">
-		<input type="text" name="10">
-		<input type="text" name="11">
-		<input type="text" name="12">
-		<input type="text" name="13">
-		<input type="submit">
-	</form>
-
+	
+	<div class="container">
+		<h1 class="brand"><span>Heart</span> Disease Prediction</h1>
+		<div class="wrapper animated bounceInLeft">
+			<div class="company-info">
+				<h3>Heart Disease Prediction</h3>
+				<img src="/images/heart.jpg" alt="heart">
+				<ul>
+					<li><i class="fa fa-road"></i> 44 Something st</li>
+					<li><i class="fa fa-phone"></i> 9990056355</li>
+					<li><i class="fa fa-envelope"></i> test@heart.test</li>
+				</ul>
+			</div>
+			<div class="contact">
+				<h3>Fill your records </h3>
+				<form action="/heart" method="POST">
+					<p>
+						<label>Age</label>
+						<input type="text" name="age">
+					</p>
+					<p>
+						<label>Sex</label>
+						<select name="sex">
+							<option value="0">Female</option>
+							<option value="1">Male</option>
+						</select>
+					</p>
+					<p>
+						<label>Chest pain type</label>
+						<select name="cp">
+							<option value="1">Typical angina</option>
+							<option value="2">Atypical angina</option>
+							<option value="3">Non-anginal pain</option>
+							<option value="4">Asymptomatic</option>
+						</select>
+					</p>
+					<p>
+						<label>Resting Blood pressure</label>
+						<input type="text" name="trestbps">
+					</p>
+					<p>
+						<label>Serum Cholestrol</label>
+						<input type="text" name="chol">
+					</p>
+					<p>
+						<label>Fasting blood sugar > 120 mg/dl</label>
+						<select name="fbs">
+							<option value="0">False</option>
+							<option value="1">True</option>
+						</select>
+					</p>
+					<p>
+						<label>Resting ECG results</label>
+						<select name="restecg">
+							<option value="0">Normal</option>
+							<option value="1">Having ST-T wave abnormality ( > 0.05 mV)</option>
+							<option value="2">Showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+						</select>
+					</p>
+					<p>
+						<label>Maximum heart rate</label>
+						<input type="text" name="thalach">
+					</p>
+					<p>
+						<label>Exercise induced angina</label>
+						<select name="exang">
+							<option value="0">No</option>
+							<option value="1">Yes</option>
+						</select>
+					</p>
+					<p>
+						<label>ST depression induced by exercise relative to rest</label>
+						<input type="text" name="oldpeak">
+					</p>
+					<p>
+						<label>Slope of peak exercise ST segment</label>
+						<select name="slope">
+							<option value="1">Upscaling</option>
+							<option value="2">Flat</option>
+							<option value="3">Downscaling</option>
+						</select>
+					</p>
+					<p>
+						<label>No. of major vessels(0-3) colored by fluorosopy</label>
+						<input type="text" name="ca">
+					</p>
+					<p>
+						<label>Thal</label>
+						<select name="thal">
+							<option value="3">Normal</option>
+							<option value="6">Fixed defect</option>
+							<option value="7">Reversable defect</option>
+						</select>
+					</p>
+					<p class="full">
+						<button>Submit</button>
+					</p>
+				</form>
+			</div>
+		</div>	
+	</div>
 
 <% include ./partials/header %>

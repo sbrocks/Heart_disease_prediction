@@ -2,7 +2,7 @@ var express=require('express');
 var bodyParser=require('body-parser');
 var app=express()
 var port=3000||process.env.PORT
-
+var result='';
 app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(bodyParser.json())
@@ -33,7 +33,12 @@ app.post('/heart',function(req,res){
 		console.log('error:'+data);
 	});
 	py.stdout.on('end',function(){
-		console.log('Sum of numbers=',dataString);
+		if(parseInt(dataString)==0){
+			result=false;
+		} else {
+			result=true;
+		}
+		console.log('Patient has high chances of suffering from heart disease: ',result);
 	});
 
 	py.on('close',function(code){
@@ -46,6 +51,9 @@ app.post('/heart',function(req,res){
 	//console.log('complete');
 });
 
+app.get('/heart',function(req,res){
+	res.render('results',{result:result});   // To be displayed on webpage
+});
 
 app.listen(port,function(){
 	console.log('Server running on port : '+port)
